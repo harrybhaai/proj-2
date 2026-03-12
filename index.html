@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== MODIFY PAGE TITLE HERE ===== -->
+  <title>Universal Manager</title>
+  <!-- ==================================-->
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ===== MODIFY HEADING HERE ===== -->
+    <h1 id="app-title">📋 Item Manager</h1>
+    <!-- ================================ -->
+
+    <!-- ── FORM SECTION ──────────────────────────────────── -->
+    <!--  Add / edit inputs live here.                        -->
+    <!--  Keep data-field values matching your schema fields. -->
+    <!-- ──────────────────────────────────────────────────── -->
+    <div class="card">
+      <h2 id="form-title">Add New Item</h2>
+
+      <form id="item-form">
+
+        <!-- Hidden field: stores _id when editing -->
+        <input type="hidden" id="item-id" />
+
+        <!-- ===== MODIFY / ADD FORM FIELDS HERE ===== -->
+
+        <!-- Field 1 — name (required) -->
+        <div class="form-group">
+          <label for="field-name">Name *</label>
+          <input
+            type="text"
+            id="field-name"
+            data-field="name"
+            placeholder="Enter name"
+            required
+          />
+        </div>
+
+        <!-- Field 2 — description -->
+        <div class="form-group">
+          <label for="field-description">Description</label>
+          <input
+            type="text"
+            id="field-description"
+            data-field="description"
+            placeholder="Enter description"
+          />
+        </div>
+
+        <!-- Field 3 — status (dropdown) -->
+        <div class="form-group">
+          <label for="field-status">Status</label>
+          <select id="field-status" data-field="status">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+            <option value="pending">Pending</option>
+          </select>
+        </div>
+
+        <!-- ===== ADD MORE FIELDS ABOVE THIS LINE ===== -->
+        <!--  Example extra field:
+          <div class="form-group">
+            <label for="field-email">Email</label>
+            <input type="email" id="field-email" data-field="email" placeholder="Enter email" />
+          </div>
+        -->
+
+        <!-- Form buttons -->
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary">💾 Save</button>
+          <button type="button" class="btn btn-secondary" id="cancel-btn" style="display:none">✖ Cancel</button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- ── LIST SECTION ───────────────────────────────────── -->
+    <div class="card">
+      <h2>
+        <!-- ===== MODIFY LIST HEADING HERE ===== -->
+        All Items
+        <!-- ====================================== -->
+        <span id="item-count" class="badge">0</span>
+      </h2>
+
+      <!-- Search bar -->
+      <input
+        type="text"
+        id="search-input"
+        placeholder="🔍 Search..."
+        class="search-bar"
+      />
+
+      <!-- Item cards are injected here by script.js -->
+      <div id="item-list"></div>
+
+      <!-- Empty state message -->
+      <p id="empty-msg" class="empty-msg">No items found. Add one above!</p>
+    </div>
+
+  </div><!-- /container -->
+
+  <script src="script.js"></script>
+</body>
+</html>
